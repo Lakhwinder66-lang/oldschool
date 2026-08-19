@@ -34,26 +34,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="lg:col-span-8 flex flex-col justify-center text-left">
             
             {/* Editorial Eyebrow Tag */}
-            <div className="mb-6 flex items-center gap-3">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-[#F27D26] shadow-[0_0_25px_rgba(242,125,38,0.5)] flex-shrink-0 bg-black">
-                <img
-                  src="/src/assets/images/gym_official_logo_1787145333528.jpg"
-                  alt="Old Skoool Gym Official Logo"
-                  className="w-full h-full object-cover rounded-full"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#F27D26] inline-block animate-pulse"></span>
-                  <span className="text-[#F27D26] text-xs font-black tracking-[0.35em] uppercase">
-                    Official Fitness Studio · Firozpur
-                  </span>
-                </div>
-                <div className="text-[11px] text-white/50 font-mono mt-0.5">
-                  Gobind Nagri Road, Model Town
-                </div>
-              </div>
+            <div className="mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#F27D26] inline-block animate-pulse"></span>
+              <span className="text-[#F27D26] text-xs font-bold tracking-[0.4em] uppercase">
+                Premium Fitness Studio · Firozpur
+              </span>
             </div>
 
             {/* Monumental Editorial Headline */}
