@@ -1,0 +1,6 @@
+{
+  "name": "Old Skoool Gym - Firozpur",
+  "description": "Ultra-premium iOS 26 transparent liquid glass gym experience for Old Skoool Gym in Firozpur, Punjab.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
