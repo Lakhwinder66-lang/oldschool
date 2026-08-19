@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import gymLogo from '../assets/images/gym_official_logo_1787145333528.jpg';
 import { Sparkles, Phone, Navigation, Menu, X, Star, MessageCircle, Share2, Dumbbell } from 'lucide-react';
 import { GYM_DETAILS } from '../data/gymData';
 
@@ -41,7 +41,7 @@ export const TransparentNavbar: React.FC<TransparentNavbarProps> = ({
         >
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#F27D26]/60 shadow-[0_0_20px_rgba(242,125,38,0.4)] group-hover:scale-105 group-hover:border-[#F27D26] transition-all flex-shrink-0 bg-black">
             <img
-              src="/src/assets/images/gym_official_logo_1787145333528.jpg"
+              src={gymLogo}
               alt="Old Skoool Gym Official Logo"
               className="w-full h-full object-cover rounded-full"
               referrerPolicy="no-referrer"
