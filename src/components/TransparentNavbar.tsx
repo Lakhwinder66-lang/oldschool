@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import gymLogo from '../assets/images/gym_official_logo_1787145333528.jpg';
 import { Sparkles, Phone, Navigation, Menu, X, Star, MessageCircle, Share2, Dumbbell } from 'lucide-react';
 import { GYM_DETAILS } from '../data/gymData';
