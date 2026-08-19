@@ -34,11 +34,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="lg:col-span-8 flex flex-col justify-center text-left">
             
             {/* Editorial Eyebrow Tag */}
-            <div className="mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#F27D26] inline-block animate-pulse"></span>
-              <span className="text-[#F27D26] text-xs font-bold tracking-[0.4em] uppercase">
-                Premium Fitness Studio · Firozpur
-              </span>
+            <div className="mb-6 flex items-center gap-3">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-[#F27D26] shadow-[0_0_25px_rgba(242,125,38,0.5)] flex-shrink-0 bg-black">
+                <img
+                  src="/src/assets/images/gym_official_logo_1787145333528.jpg"
+                  alt="Old Skoool Gym Official Logo"
+                  className="w-full h-full object-cover rounded-full"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#F27D26] inline-block animate-pulse"></span>
+                  <span className="text-[#F27D26] text-xs font-black tracking-[0.35em] uppercase">
+                    Official Fitness Studio · Firozpur
+                  </span>
+                </div>
+                <div className="text-[11px] text-white/50 font-mono mt-0.5">
+                  Gobind Nagri Road, Model Town
+                </div>
+              </div>
             </div>
 
             {/* Monumental Editorial Headline */}
@@ -81,6 +96,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 onOpenShareModal={onOpenShareModal}
                 onOpenPhotosModal={onOpenPhotosModal}
               />
+            </div>
+
+            {/* Owners Quick Bar */}
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-white/40">Owners & Coaches:</span>
+              <a
+                href="https://www.instagram.com/_getfitwithanjali?igsh=NTNzcWIzMmpsNmh1&igsi=NTNzcWIzMmpsNmh1&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 hover:bg-[#F27D26]/20 border border-white/10 hover:border-[#F27D26]/40 px-3.5 py-1.5 rounded-full text-white/90 hover:text-white transition-colors flex items-center gap-1.5"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F27D26]"></span>
+                <span className="font-bold">Anjali</span>
+                <span className="text-[10px] text-white/50">(Aerobics & Nutrition) · 70872-85367</span>
+              </a>
+
+              <a
+                href="https://www.instagram.com/satnam_sodhi_oldskooolgym?igsh=MXd2c2lzeHFsZWVmZw%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 hover:bg-[#F27D26]/20 border border-white/10 hover:border-[#F27D26]/40 px-3.5 py-1.5 rounded-full text-white/90 hover:text-white transition-colors flex items-center gap-1.5"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F27D26]"></span>
+                <span className="font-bold">Satnam Singh</span>
+                <span className="text-[10px] text-white/50">(PT & Nutrition) · 8544834372</span>
+              </a>
             </div>
 
           </div>

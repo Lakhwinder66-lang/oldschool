@@ -62,8 +62,13 @@ export const VIPPassModal: React.FC<VIPPassModalProps> = ({
         {/* Header */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#F27D26]/20 text-[#F27D26] border border-[#F27D26]/30 flex items-center justify-center">
-              <Dumbbell className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#F27D26]/60 shadow-[0_0_15px_rgba(242,125,38,0.4)] flex-shrink-0 bg-black">
+              <img
+                src="/src/assets/images/gym_official_logo_1787145333528.jpg"
+                alt="Old Skoool Gym Official Logo"
+                className="w-full h-full object-cover rounded-full"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
               <h3 className="text-base font-bold text-white uppercase font-display">VIP Pass Protocol</h3>
@@ -134,10 +139,10 @@ export const VIPPassModal: React.FC<VIPPassModalProps> = ({
                   onChange={(e) => setServiceInterest(e.target.value)}
                   className="w-full bg-[#121216] border border-white/15 rounded-2xl py-3 px-4 text-xs text-white focus:outline-none focus:border-[#F27D26]"
                 >
-                  <option value="Strength Training & Heavy Iron">Strength Training & Heavy Iron</option>
-                  <option value="Cardio & HIIT Sprints">Cardio & HIIT Sprints</option>
-                  <option value="Aerobics Group Classes">Aerobics Group Classes</option>
-                  <option value="Dance Classes & Bhangra Cardio">Dance Classes & Bhangra Cardio</option>
+                  <option value="Strength Only (Heavy Iron)">Strength Only (Heavy Iron - ₹1,500/mo)</option>
+                  <option value="Strength + Cardio Zone">Strength + Cardio Zone (₹2,000/mo)</option>
+                  <option value="Aerobics (For Women)">Aerobics (For Women - ₹1,000/mo)</option>
+                  <option value="Premium (For Women)">Premium - Aerobics + Strength + Diet (₹2,500/mo)</option>
                   <option value="Diet & Nutrition Consultation">Diet & Nutrition Consultation</option>
                   <option value="1-on-1 Personal Training">1-on-1 Personal Training</option>
                 </select>

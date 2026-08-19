@@ -20,6 +20,7 @@ export const TransparentNavbar: React.FC<TransparentNavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { label: "Founders", href: "#trainers" },
     { label: "Programs", href: "#services" },
     { label: "Popular Times", href: "#popular-times" },
     { label: "Studio", href: "#gallery" },
@@ -36,17 +37,27 @@ export const TransparentNavbar: React.FC<TransparentNavbarProps> = ({
         {/* Editorial Brand Logo */}
         <a 
           href="#"
-          className="pointer-events-auto bg-[#0a0a0d]/90 backdrop-blur-xl border border-white/10 py-2.5 px-4 rounded-full flex items-center gap-2.5 group shadow-[0_10px_35px_rgba(0,0,0,0.7)] hover:border-[#F27D26]/40 transition-all"
+          className="pointer-events-auto bg-[#0a0a0d]/90 backdrop-blur-xl border border-white/10 py-1.5 px-3 sm:py-2 sm:px-4 rounded-full flex items-center gap-3 group shadow-[0_10px_35px_rgba(0,0,0,0.7)] hover:border-[#F27D26]/50 transition-all"
         >
-          <div className="w-5 h-5 bg-[#F27D26] rounded-full shadow-[0_0_15px_rgba(242,125,38,0.5)] group-hover:scale-110 transition-transform flex items-center justify-center">
-            <span className="w-1.5 h-1.5 bg-black rounded-full"></span>
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#F27D26]/60 shadow-[0_0_20px_rgba(242,125,38,0.4)] group-hover:scale-105 group-hover:border-[#F27D26] transition-all flex-shrink-0 bg-black">
+            <img
+              src="/src/assets/images/gym_official_logo_1787145333528.jpg"
+              alt="Old Skoool Gym Official Logo"
+              className="w-full h-full object-cover rounded-full"
+              referrerPolicy="no-referrer"
+            />
           </div>
-          <div className="flex items-center gap-1.5">
-            <span className="text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-white font-display">
-              Old Skoool
-            </span>
-            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#F27D26] hidden xs:inline">
-              Gym
+          <div className="flex flex-col text-left">
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs sm:text-base font-black tracking-[0.15em] uppercase text-white font-display leading-tight">
+                Old Skoool
+              </span>
+              <span className="text-[10px] sm:text-xs font-black tracking-[0.2em] uppercase text-[#F27D26]">
+                Gym
+              </span>
+            </div>
+            <span className="text-[9px] uppercase tracking-widest text-white/50 font-mono hidden sm:block">
+              Est. Firozpur · Punjab
             </span>
           </div>
         </a>

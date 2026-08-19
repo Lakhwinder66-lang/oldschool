@@ -1,4 +1,137 @@
-import { GymInfo, ServiceItem, DayPopularity, GymReview, GalleryPhoto, MembershipPlan } from '../types';
+import { GymInfo, ServiceItem, DayPopularity, GymReview, GalleryPhoto, MembershipPlan, GymOwner, MembershipPackage } from '../types';
+
+export const GYM_PACKAGES: MembershipPackage[] = [
+  {
+    id: "strength-only",
+    name: "Strength Only",
+    category: "Heavy Iron & Hypertrophy",
+    badge: "Pure Iron",
+    description: "Dedicated access to our Olympic barbells, Hammer Strength machines, power racks, and heavy dumbbells up to 50kg.",
+    prices: {
+      monthly: 1500,
+      quarterly: 3500,
+      annual: 9000
+    },
+    features: [
+      "Olympic Barbells & Power Racks floor access",
+      "Hammer Strength & calibrated plate loading",
+      "Dumbbells 2.5kg up to 50kg",
+      "Form correction & spotting assistance by certified coach"
+    ],
+    accentColor: "from-zinc-500/20 to-neutral-700/20",
+    coach: "Satnam Singh (Certified Personal Trainer & Nutritionist)",
+    contactPhone: "8544834372"
+  },
+  {
+    id: "strength-cardio",
+    name: "Strength + Cardio",
+    category: "Full Conditioning",
+    badge: "Most Popular",
+    popular: true,
+    description: "Complete unlimited combo: heavy duty iron floor combined with the commercial endurance cardio zone.",
+    prices: {
+      monthly: 2000,
+      quarterly: 5000,
+      annual: 12000
+    },
+    features: [
+      "Full Strength & Heavy Duty Iron Floor access",
+      "Commercial Treadmills, Cross-Trainers & Assault Bikes",
+      "Rowing Ergometers & HIIT Conditioning",
+      "Initial workout induction & cardio pacing guidelines"
+    ],
+    accentColor: "from-[#F27D26]/25 to-amber-600/25",
+    coach: "Satnam Singh (Owner & Certified PT)",
+    contactPhone: "8544834372"
+  },
+  {
+    id: "aerobics-women",
+    name: "Aerobics (For Women)",
+    category: "Ladies Group Studio",
+    targetAudience: "For Women",
+    badge: "Women Exclusive",
+    description: "High-energy rhythm aerobics, core toning, and fat burning designed exclusively for women in a supportive group studio.",
+    prices: {
+      monthly: 1000,
+      quarterly: 2500,
+      annual: 9000
+    },
+    features: [
+      "Dedicated women's morning & evening batch slots",
+      "Rhythm step aerobics & full body toning routines",
+      "Acoustic surround sound & dynamic sprung studio floor",
+      "Direct guidance by Certified Aerobics Instructor Anjali"
+    ],
+    accentColor: "from-rose-500/20 to-pink-600/20",
+    coach: "Anjali (Certified Aerobics Trainer & Nutritionist)",
+    contactPhone: "7087285367"
+  },
+  {
+    id: "premium-women",
+    name: "Premium (For Women)",
+    category: "All-Inclusive Elite",
+    targetAudience: "For Women",
+    badge: "VIP Complete",
+    description: "The ultimate transformation package for women: Aerobics studio + Strength + Cardio zone + Personalized Nutrition Chart.",
+    prices: {
+      monthly: 2500,
+      quarterly: 5500,
+      annual: 15000
+    },
+    features: [
+      "All-Access: Aerobics Studio + Strength Iron + Cardio Zone",
+      "Custom Macro & Diet Chart by Certified Nutritionist",
+      "Body composition & fat loss progress tracking",
+      "Dual mentorship by Anjali & Satnam Singh"
+    ],
+    accentColor: "from-purple-500/20 to-indigo-600/20",
+    coach: "Anjali & Satnam Singh (Certified Masters)",
+    contactPhone: "7087285367"
+  }
+];
+
+export const GYM_OWNERS: GymOwner[] = [
+  {
+    id: "anjali",
+    name: "Anjali",
+    role: "Owner",
+    designation: "Certified Aerobics Trainer & Certified Nutritionist",
+    phone: "70872-85367",
+    phoneRaw: "+917087285367",
+    whatsapp: "917087285367",
+    instagram: "https://www.instagram.com/_getfitwithanjali?igsh=NTNzcWIzMmpsNmh1&igsi=NTNzcWIzMmpsNmh1&utm_source=qr",
+    instagramHandle: "@_getfitwithanjali",
+    specialties: [
+      "Certified Aerobics Trainer",
+      "Certified Nutritionist",
+      "Rhythm Group Aerobics",
+      "Female Fitness & Toning",
+      "Custom Macro & Meal Planning"
+    ],
+    bio: "Owner & Head Aerobics/Nutrition Director at Old Skoool Gym. Guides high-energy group fitness, cardio endurance, and personalized dietary transformations for members across Firozpur.",
+    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "satnam-singh",
+    name: "Satnam Singh",
+    role: "Owner",
+    designation: "Certified Personal Trainer & Certified Nutritionist",
+    phone: "85448 34372",
+    phoneRaw: "+918544834372",
+    whatsapp: "918544834372",
+    instagram: "https://www.instagram.com/satnam_sodhi_oldskooolgym?igsh=MXd2c2lzeHFsZWVmZw%3D%3D&utm_source=qr",
+    instagramHandle: "@satnam_sodhi_oldskooolgym",
+    specialties: [
+      "Certified Personal Trainer",
+      "Certified Nutritionist",
+      "Heavy Iron & Hypertrophy",
+      "Injury Prevention & Form",
+      "1-on-1 Transformation Mentorship"
+    ],
+    bio: "Owner & Master Strength Coach at Old Skoool Gym. Leads 1-on-1 personal training, advanced barbell mechanics, powerlifting protocols, and certified nutritional science.",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop"
+  }
+];
 
 export const GYM_DETAILS: GymInfo = {
   name: "Old Skoool Gym",
@@ -72,7 +205,7 @@ export const SERVICES_LIST: ServiceItem[] = [
       "Dedicated morning & evening ladies & mixed batches"
     ],
     equipment: ["Aerobic Steps", "Resistance Bands", "Light Toning Bars", "Medicine Balls", "Yoga Mats"],
-    trainerSpecialist: "Instructor Simran & Team",
+    trainerSpecialist: "Owner Coach Anjali (Certified Aerobics Trainer)",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop",
     intensity: "Medium",
     idealFor: "Weight Loss, Flexibility, Core Toning, Full Body Conditioning"
@@ -90,7 +223,7 @@ export const SERVICES_LIST: ServiceItem[] = [
       "Dedicated wooden-floor mirrored dance studio"
     ],
     equipment: ["Sprung Dance Floor", "Acoustic Surround Array", "Full Wall Mirrors", "Ambient Glow"],
-    trainerSpecialist: "Dance Maestro Aman",
+    trainerSpecialist: "Owner Coach Anjali & Dance Masters",
     image: "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=1200&auto=format&fit=crop",
     intensity: "High",
     idealFor: "Cardio conditioning, coordination, stress relief, fun fat burning"
@@ -108,7 +241,7 @@ export const SERVICES_LIST: ServiceItem[] = [
       "Supplement timing, hydration & gut health advice"
     ],
     equipment: ["InBody Composition Analyzer", "Skinfold Calipers", "Macro Digital Tracker", "Nutrient Manuals"],
-    trainerSpecialist: "Dietitian Dr. Manmeet Kaur (Consultant)",
+    trainerSpecialist: "Owners Anjali & Satnam Singh (Certified Nutritionists)",
     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop",
     intensity: "Custom",
     idealFor: "Sustainable fat reduction, muscle building, clinical lifestyle reversal"
@@ -126,7 +259,7 @@ export const SERVICES_LIST: ServiceItem[] = [
       "Flexible private booking slots (Morning / Evening)"
     ],
     equipment: ["Private PT Zone", "VBT Velocity Sensors", "BFR Bands", "Mobility Rigs"],
-    trainerSpecialist: "Head Coach Lakhwinder & Senior Staff",
+    trainerSpecialist: "Owner Master Coach Satnam Singh (Certified PT)",
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop",
     intensity: "High",
     idealFor: "Fast-track body transformations, beginners, competitive athletes"

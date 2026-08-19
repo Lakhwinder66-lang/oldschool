@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, MessageCircle, Share2, Send, PhoneCall, Dumbbell, Link } from 'lucide-react';
-import { GYM_DETAILS } from '../data/gymData';
+import { X, Copy, Check, MessageCircle, Share2, Send, PhoneCall, Dumbbell, Link, Instagram, ArrowUpRight } from 'lucide-react';
+import { GYM_DETAILS, GYM_OWNERS } from '../data/gymData';
 
 interface ShareSheetModalProps {
   isOpen: boolean;
@@ -39,13 +39,18 @@ export const ShareSheetModal: React.FC<ShareSheetModalProps> = ({ isOpen, onClos
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl animate-in fade-in duration-200">
-      <div className="bg-[#0a0a0c] border border-white/15 max-w-sm w-full rounded-[36px] overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.9)] text-left">
+      <div className="bg-[#0a0a0c] border border-white/15 max-w-md w-full rounded-[36px] overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.9)] text-left">
         
         {/* Share Sheet Header */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#F27D26]/20 text-[#F27D26] border border-[#F27D26]/30 flex items-center justify-center">
-              <Dumbbell className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#F27D26]/60 shadow-[0_0_15px_rgba(242,125,38,0.4)] flex-shrink-0 bg-black">
+              <img
+                src="/src/assets/images/gym_official_logo_1787145333528.jpg"
+                alt="Old Skoool Gym Official Logo"
+                className="w-full h-full object-cover rounded-full"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
               <h3 className="text-sm font-bold text-white uppercase font-display">Old Skoool Gym</h3>
@@ -113,7 +118,7 @@ export const ShareSheetModal: React.FC<ShareSheetModalProps> = ({ isOpen, onClos
           </div>
 
           {/* Copy Link Row */}
-          <div className="pt-2">
+          <div>
             <button
               onClick={handleCopyLink}
               className="w-full bg-[#121216] border border-white/15 py-3 px-4 rounded-full flex items-center justify-between text-xs font-semibold text-white hover:border-[#F27D26] transition-colors"
@@ -129,6 +134,38 @@ export const ShareSheetModal: React.FC<ShareSheetModalProps> = ({ isOpen, onClos
               )}
             </button>
           </div>
+
+          {/* Owners' Instagram Profiles */}
+          <div className="pt-3 border-t border-white/10">
+            <div className="text-[10px] uppercase font-bold tracking-widest text-white/50 mb-2.5">
+              Follow Gym Owners on Instagram:
+            </div>
+            <div className="space-y-2">
+              {GYM_OWNERS.map((owner) => (
+                <a
+                  key={owner.id}
+                  href={owner.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/5 hover:bg-white/10 border border-white/10 p-3 rounded-2xl flex items-center justify-between group transition-colors"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="p-2 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white">
+                      <Instagram className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white group-hover:text-[#F27D26] transition-colors">
+                        {owner.name} ({owner.role})
+                      </div>
+                      <div className="text-[10px] text-white/50 font-mono">{owner.instagramHandle}</div>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-white/40 group-hover:text-white" />
+                </a>
+              ))}
+            </div>
+          </div>
+
         </div>
 
       </div>

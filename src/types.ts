@@ -75,6 +75,25 @@ export interface MembershipPlan {
   accentColor: string;
 }
 
+export interface MembershipPackage {
+  id: string;
+  name: string;
+  category: string;
+  targetAudience?: string;
+  badge?: string;
+  description: string;
+  prices: {
+    monthly: number;
+    quarterly: number;
+    annual: number;
+  };
+  features: string[];
+  accentColor: string;
+  popular?: boolean;
+  coach: string;
+  contactPhone: string;
+}
+
 export interface VIPPassData {
   passId: string;
   fullName: string;
@@ -83,4 +102,19 @@ export interface VIPPassData {
   visitDate: string;
   slot: string;
   qrCodeSeed: string;
+}
+
+export interface GymOwner {
+  id: string;
+  name: string;
+  role: string;
+  designation: string;
+  phone: string;
+  phoneRaw: string;
+  whatsapp: string;
+  instagram: string;
+  instagramHandle: string;
+  specialties: string[];
+  bio: string;
+  image: string;
 }

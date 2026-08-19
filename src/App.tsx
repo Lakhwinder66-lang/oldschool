@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { DynamicIslandStatus } from './components/DynamicIslandStatus';
 import { TransparentNavbar } from './components/TransparentNavbar';
 import { HeroSection } from './components/HeroSection';
+import { OwnersTrainersSection } from './components/OwnersTrainersSection';
 import { PopularTimesVisualizer } from './components/PopularTimesVisualizer';
 import { ServicesShowcase } from './components/ServicesShowcase';
 import { PhotoGallerySection } from './components/PhotoGallerySection';
@@ -82,7 +83,10 @@ export default function App() {
           onOpenPhotosModal={handleOpenPhotos}
         />
 
-        {/* 2. Popular Times Visualizer (Google Maps replica with 3 PM highlight) */}
+        {/* 2. Founders & Certified Head Coaches */}
+        <OwnersTrainersSection onOpenPassModal={handleOpenPassModal} />
+
+        {/* 3. Popular Times Visualizer (Google Maps replica with 3 PM highlight) */}
         <PopularTimesVisualizer />
 
         {/* 3. 6 Core Pillars Showcase */}

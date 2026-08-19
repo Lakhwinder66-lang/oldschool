@@ -320,25 +320,33 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
             </div>
 
             {/* Direct Connect to Diet Consultant */}
-            <div className="pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center gap-3">
-              <a
-                id="send-diet-whatsapp"
-                href={`https://wa.me/${GYM_DETAILS.whatsapp}?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:flex-1 bg-[#F27D26] hover:bg-[#d96816] text-white py-3.5 px-5 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_4px_20px_rgba(242,125,38,0.3)]"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Send to Diet Consultant</span>
-              </a>
+            <div className="pt-5 border-t border-white/10 space-y-3">
+              <div className="text-[10px] uppercase font-bold tracking-widest text-white/50 text-left">
+                Send to Certified Nutritionist (Owners):
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <a
+                  id="send-diet-anjali"
+                  href={`https://wa.me/917087285367?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-[#F27D26] text-white py-3 px-4 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-white/10"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Anjali (70872-85367)</span>
+                </a>
 
-              <button
-                id="book-diet-consult-btn"
-                onClick={() => onOpenPassModal('Diet & Nutrition Consultation')}
-                className="w-full sm:w-auto editorial-btn-glass py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-wider text-white"
-              >
-                In-Person Consultation
-              </button>
+                <a
+                  id="send-diet-satnam"
+                  href={`https://wa.me/918544834372?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-[#F27D26] text-white py-3 px-4 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-white/10"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Satnam Singh (8544834372)</span>
+                </a>
+              </div>
             </div>
 
           </div>
