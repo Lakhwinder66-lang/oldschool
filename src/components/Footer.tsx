@@ -132,7 +132,7 @@ export const Footer: React.FC<FooterProps> = ({
             © {new Date().getFullYear()} Old Skoool Gym, Firozpur, Punjab. All rights reserved.
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[#F27D26] font-bold tracking-widest uppercase text-[10px]">Editorial Aesthetic</span>
+            <span className="text-[#F27D26] font-bold tracking-widest uppercase text-[10px]">Maded By - Waris (shxh1jii)</span>
           </div>
         </div>
 
