@@ -505,45 +505,45 @@ export const REVIEWS_LIST: GymReview[] = [
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
   {
     id: "g1",
+    title: "Strength Floor & Dumbbell Racks",
+    category: "strength",
+    url: "/src/assets/images/gym_dumbbells_floor_1787405178330.jpg",
+    caption: "Heavy duty dumbbell racks, warm LED halo mirrors, and muscle training murals."
+  },
+  {
+    id: "g2",
+    title: "Aerobics & Dance Cardio Hall",
+    category: "dance",
+    url: "/src/assets/images/gym_aerobics_studio_1787405215727.jpg",
+    caption: "Wooden floor aerobics studio with dynamic ceiling LED strips and motivational wall art."
+  },
+  {
+    id: "g3",
+    title: "Old Skoool Gym Night Facade",
+    category: "outside",
+    url: "/src/assets/images/gym_night_facade_1787405195122.jpg",
+    caption: "Glowing amber-orange neon signage on Gobind Nagri Road, Model Town Firozpur."
+  },
+  {
+    id: "g4",
     title: "Old Skoool Gym Main Floor",
     category: "interior",
     url: "/src/assets/images/gym_interior_hero_1787135615190.jpg",
     caption: "Heavy duty iron zone, Olympic platforms and ambient rim lights."
   },
   {
-    id: "g2",
-    title: "Aerobics & Dance Studio",
+    id: "g5",
+    title: "Cardio & Dance Arena",
     category: "dance",
     url: "/src/assets/images/gym_cardio_dance_1787135636415.jpg",
-    caption: "Sprung floor studio with acoustic surround sound & full length mirrors."
-  },
-  {
-    id: "g3",
-    title: "Powerlifting & Heavy Dumbbells",
-    category: "strength",
-    url: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=1200&auto=format&fit=crop",
-    caption: "Custom dumbbells up to 50kg, precision cast iron plates."
-  },
-  {
-    id: "g4",
-    title: "Cardio & HIIT Zone",
-    category: "cardio_aerobics",
-    url: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1200&auto=format&fit=crop",
-    caption: "Commercial treadmills, assault bikes and stairmasters with telemetry."
-  },
-  {
-    id: "g5",
-    title: "Exterior & Parking View",
-    category: "outside",
-    url: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1200&auto=format&fit=crop",
-    caption: "Exterior facade on Gobind Nagri Road, Industrial Area with spacious parking."
+    caption: "High energy group fitness floor with acoustic surround sound & mirrors."
   },
   {
     id: "g6",
-    title: "Nutrition & Diet Consultation Desk",
+    title: "Nutrition & Transformation Desk",
     category: "interior",
     url: "https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=1200&auto=format&fit=crop",
-    caption: "Dedicated consultation room for body composition and diet mapping."
+    caption: "Dedicated consultation room for body composition and diet mapping by Anjali & Satnam Singh."
   }
 ];
 

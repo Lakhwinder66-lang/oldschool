@@ -37,10 +37,10 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
   const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
 
   const getBmiCategory = (val: number) => {
-    if (val < 18.5) return { text: 'Underweight', color: 'text-amber-400' };
-    if (val < 24.9) return { text: 'Optimal Normal', color: 'text-[#F27D26]' };
-    if (val < 29.9) return { text: 'Overweight', color: 'text-amber-400' };
-    return { text: 'High Mass', color: 'text-rose-400' };
+    if (val < 18.5) return { text: 'Underweight', color: 'text-amber-600' };
+    if (val < 24.9) return { text: 'Optimal Normal', color: 'text-red-600' };
+    if (val < 29.9) return { text: 'Overweight', color: 'text-amber-600' };
+    return { text: 'High Mass', color: 'text-rose-600' };
   };
 
   const getRecommendedSplit = () => {
@@ -59,19 +59,19 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
   );
 
   return (
-    <section id="macro-calc" className="py-20 px-4 sm:px-8 md:px-12 relative">
+    <section id="macro-calc" className="py-20 px-4 sm:px-8 md:px-12 relative bg-white">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
         <div className="text-left mb-12">
-          <div className="inline-flex items-center gap-2 text-[#F27D26] text-xs font-bold tracking-[0.3em] uppercase mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#F27D26]"></span>
+          <div className="inline-flex items-center gap-2 text-red-600 text-xs font-bold tracking-[0.3em] uppercase mb-2">
+            <span className="w-2 h-2 rounded-full bg-red-600"></span>
             <span>Nutrition & Macro Bio-Engine</span>
           </div>
-          <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tight font-display">
+          <h2 className="text-4xl sm:text-6xl font-black text-zinc-900 uppercase tracking-tight font-display">
             Diet & Macro Calculator
           </h2>
-          <p className="text-sm sm:text-base text-white/60 mt-2 font-light max-w-xl">
+          <p className="text-sm sm:text-base text-zinc-600 mt-2 font-light max-w-xl">
             Precision daily caloric requirement, macro distribution, and training protocol curated for Old Skoool Gym members.
           </p>
         </div>
@@ -80,19 +80,19 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Controls Panel */}
-          <div className="lg:col-span-6 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[32px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+          <div className="lg:col-span-6 bg-white border border-zinc-200 rounded-[32px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.05)] text-left">
             <div className="space-y-6">
               
               {/* Gender and Goal */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-white/60 mb-2 block">Gender</label>
-                  <div className="grid grid-cols-2 gap-1 bg-black/40 p-1 rounded-full border border-white/10">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 mb-2 block">Gender</label>
+                  <div className="grid grid-cols-2 gap-1 bg-zinc-100 p-1 rounded-full border border-zinc-200">
                     <button
                       type="button"
                       onClick={() => setGender('male')}
                       className={`py-2 text-xs font-bold rounded-full uppercase tracking-wider transition-all ${
-                        gender === 'male' ? 'bg-white text-black' : 'text-white/50 hover:text-white'
+                        gender === 'male' ? 'bg-red-600 text-white shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
                       }`}
                     >
                       Male
@@ -101,7 +101,7 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                       type="button"
                       onClick={() => setGender('female')}
                       className={`py-2 text-xs font-bold rounded-full uppercase tracking-wider transition-all ${
-                        gender === 'female' ? 'bg-white text-black' : 'text-white/50 hover:text-white'
+                        gender === 'female' ? 'bg-red-600 text-white shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
                       }`}
                     >
                       Female
@@ -110,13 +110,13 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                 </div>
 
                 <div>
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-white/60 mb-2 block">Diet Type</label>
-                  <div className="grid grid-cols-3 gap-1 bg-black/40 p-1 rounded-full border border-white/10">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 mb-2 block">Diet Type</label>
+                  <div className="grid grid-cols-3 gap-1 bg-zinc-100 p-1 rounded-full border border-zinc-200">
                     <button
                       type="button"
                       onClick={() => setDietType('veg')}
                       className={`py-2 text-[10px] font-bold rounded-full uppercase transition-all ${
-                        dietType === 'veg' ? 'bg-[#F27D26] text-white' : 'text-white/50'
+                        dietType === 'veg' ? 'bg-red-600 text-white' : 'text-zinc-600 hover:text-zinc-900'
                       }`}
                     >
                       Veg
@@ -125,7 +125,7 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                       type="button"
                       onClick={() => setDietType('eggetarian')}
                       className={`py-2 text-[10px] font-bold rounded-full uppercase transition-all ${
-                        dietType === 'eggetarian' ? 'bg-[#F27D26] text-white' : 'text-white/50'
+                        dietType === 'eggetarian' ? 'bg-red-600 text-white' : 'text-zinc-600 hover:text-zinc-900'
                       }`}
                     >
                       Egg
@@ -134,7 +134,7 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                       type="button"
                       onClick={() => setDietType('non_veg')}
                       className={`py-2 text-[10px] font-bold rounded-full uppercase transition-all ${
-                        dietType === 'non_veg' ? 'bg-[#F27D26] text-white' : 'text-white/50'
+                        dietType === 'non_veg' ? 'bg-red-600 text-white' : 'text-zinc-600 hover:text-zinc-900'
                       }`}
                     >
                       Non-Veg
@@ -148,9 +148,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                 
                 {/* Weight */}
                 <div>
-                  <div className="flex justify-between text-xs font-bold text-white mb-2">
-                    <span className="uppercase tracking-widest text-[10px] text-white/60">Body Weight</span>
-                    <span className="font-mono text-[#F27D26] text-sm">{weight} kg</span>
+                  <div className="flex justify-between text-xs font-bold text-zinc-900 mb-2">
+                    <span className="uppercase tracking-widest text-[10px] text-zinc-500">Body Weight</span>
+                    <span className="font-mono text-red-600 text-sm">{weight} kg</span>
                   </div>
                   <input
                     type="range"
@@ -158,9 +158,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                     max="140"
                     value={weight}
                     onChange={(e) => setWeight(parseInt(e.target.value))}
-                    className="w-full accent-[#F27D26] bg-white/10 rounded-lg cursor-pointer"
+                    className="w-full accent-red-600 bg-zinc-200 rounded-lg cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-white/30 font-mono mt-1">
+                  <div className="flex justify-between text-[10px] text-zinc-400 font-mono mt-1">
                     <span>40 kg</span>
                     <span>90 kg</span>
                     <span>140 kg</span>
@@ -169,9 +169,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
 
                 {/* Height */}
                 <div>
-                  <div className="flex justify-between text-xs font-bold text-white mb-2">
-                    <span className="uppercase tracking-widest text-[10px] text-white/60">Height</span>
-                    <span className="font-mono text-[#F27D26] text-sm">{height} cm ({Math.floor(height / 30.48)}' {Math.round((height % 30.48) / 2.54)}")</span>
+                  <div className="flex justify-between text-xs font-bold text-zinc-900 mb-2">
+                    <span className="uppercase tracking-widest text-[10px] text-zinc-500">Height</span>
+                    <span className="font-mono text-red-600 text-sm">{height} cm ({Math.floor(height / 30.48)}' {Math.round((height % 30.48) / 2.54)}")</span>
                   </div>
                   <input
                     type="range"
@@ -179,9 +179,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                     max="210"
                     value={height}
                     onChange={(e) => setHeight(parseInt(e.target.value))}
-                    className="w-full accent-[#F27D26] bg-white/10 rounded-lg cursor-pointer"
+                    className="w-full accent-red-600 bg-zinc-200 rounded-lg cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-white/30 font-mono mt-1">
+                  <div className="flex justify-between text-[10px] text-zinc-400 font-mono mt-1">
                     <span>140 cm</span>
                     <span>175 cm</span>
                     <span>210 cm</span>
@@ -190,9 +190,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
 
                 {/* Age */}
                 <div>
-                  <div className="flex justify-between text-xs font-bold text-white mb-2">
-                    <span className="uppercase tracking-widest text-[10px] text-white/60">Age</span>
-                    <span className="font-mono text-[#F27D26] text-sm">{age} years</span>
+                  <div className="flex justify-between text-xs font-bold text-zinc-900 mb-2">
+                    <span className="uppercase tracking-widest text-[10px] text-zinc-500">Age</span>
+                    <span className="font-mono text-red-600 text-sm">{age} years</span>
                   </div>
                   <input
                     type="range"
@@ -200,9 +200,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                     max="75"
                     value={age}
                     onChange={(e) => setAge(parseInt(e.target.value))}
-                    className="w-full accent-[#F27D26] bg-white/10 rounded-lg cursor-pointer"
+                    className="w-full accent-red-600 bg-zinc-200 rounded-lg cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-white/30 font-mono mt-1">
+                  <div className="flex justify-between text-[10px] text-zinc-400 font-mono mt-1">
                     <span>14 yrs</span>
                     <span>45 yrs</span>
                     <span>75 yrs</span>
@@ -213,13 +213,13 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
 
               {/* Transformation Target */}
               <div>
-                <label className="text-[10px] uppercase tracking-widest font-bold text-white/60 mb-2.5 block">Primary Goal</label>
+                <label className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 mb-2.5 block">Primary Goal</label>
                 <div className="grid grid-cols-3 gap-2">
                   <button
                     type="button"
                     onClick={() => setGoal('fat_loss')}
                     className={`p-3 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all flex flex-col items-center gap-1.5 ${
-                      goal === 'fat_loss' ? 'bg-[#F27D26] text-white' : 'bg-white/5 text-white/60 hover:text-white border border-white/5'
+                      goal === 'fat_loss' ? 'bg-red-600 text-white shadow-sm' : 'bg-zinc-100 text-zinc-600 hover:text-zinc-900 border border-zinc-200'
                     }`}
                   >
                     <Flame className="w-4 h-4" />
@@ -230,7 +230,7 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                     type="button"
                     onClick={() => setGoal('muscle_gain')}
                     className={`p-3 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all flex flex-col items-center gap-1.5 ${
-                      goal === 'muscle_gain' ? 'bg-[#F27D26] text-white' : 'bg-white/5 text-white/60 hover:text-white border border-white/5'
+                      goal === 'muscle_gain' ? 'bg-red-600 text-white shadow-sm' : 'bg-zinc-100 text-zinc-600 hover:text-zinc-900 border border-zinc-200'
                     }`}
                   >
                     <Dumbbell className="w-4 h-4" />
@@ -241,7 +241,7 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                     type="button"
                     onClick={() => setGoal('recomp')}
                     className={`p-3 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all flex flex-col items-center gap-1.5 ${
-                      goal === 'recomp' ? 'bg-[#F27D26] text-white' : 'bg-white/5 text-white/60 hover:text-white border border-white/5'
+                      goal === 'recomp' ? 'bg-red-600 text-white shadow-sm' : 'bg-zinc-100 text-zinc-600 hover:text-zinc-900 border border-zinc-200'
                     }`}
                   >
                     <Sparkles className="w-4 h-4" />
@@ -254,19 +254,19 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
           </div>
 
           {/* Results Output & Diet Consultation Preview */}
-          <div className="lg:col-span-6 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[32px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+          <div className="lg:col-span-6 bg-white border border-zinc-200 rounded-[32px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.05)] text-left">
             
             <div>
               {/* Daily Calorie Target Display */}
-              <div className="bg-[#0c0c0e] p-6 rounded-3xl border border-white/10 mb-6 text-center relative overflow-hidden">
-                <div className="text-[10px] font-mono uppercase tracking-widest text-[#F27D26] font-bold mb-2">
+              <div className="bg-zinc-900 text-white p-6 rounded-3xl mb-6 text-center relative overflow-hidden">
+                <div className="text-[10px] font-mono uppercase tracking-widest text-red-500 font-bold mb-2">
                   Target Daily Caloric Intake
                 </div>
                 <div className="text-5xl sm:text-6xl font-black text-white font-display tracking-tight">
-                  {targetCalories} <span className="text-lg font-light text-white/60">kcal/day</span>
+                  {targetCalories} <span className="text-lg font-light text-zinc-400">kcal/day</span>
                 </div>
                 
-                <div className="mt-4 flex items-center justify-center gap-4 text-xs font-medium text-white/60">
+                <div className="mt-4 flex items-center justify-center gap-4 text-xs font-medium text-zinc-400">
                   <span>BMI: <strong className="text-white">{bmi}</strong> ({getBmiCategory(parseFloat(bmi)).text})</span>
                   <span>·</span>
                   <span>Maintenance (TDEE): <strong className="text-white">{tdee} kcal</strong></span>
@@ -277,51 +277,51 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
               <div className="grid grid-cols-3 gap-3 mb-6 text-center">
                 
                 {/* Protein */}
-                <div className="bg-white/5 border border-white/10 p-4 rounded-2xl">
-                  <div className="text-[10px] font-mono text-[#F27D26] font-bold uppercase tracking-wider">Protein</div>
-                  <div className="text-2xl sm:text-3xl font-black text-white font-display mt-1">
+                <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl">
+                  <div className="text-[10px] font-mono text-red-600 font-bold uppercase tracking-wider">Protein</div>
+                  <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-display mt-1">
                     {proteinGrams}g
                   </div>
-                  <div className="text-[9px] text-white/50 mt-1 uppercase">
+                  <div className="text-[9px] text-zinc-500 mt-1 uppercase">
                     {dietType === 'veg' ? 'Paneer, Soya, Whey' : 'Eggs, Chicken, Fish'}
                   </div>
                 </div>
 
                 {/* Carbs */}
-                <div className="bg-white/5 border border-white/10 p-4 rounded-2xl">
-                  <div className="text-[10px] font-mono text-white/70 font-bold uppercase tracking-wider">Carbs</div>
-                  <div className="text-2xl sm:text-3xl font-black text-white font-display mt-1">
+                <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl">
+                  <div className="text-[10px] font-mono text-zinc-700 font-bold uppercase tracking-wider">Carbs</div>
+                  <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-display mt-1">
                     {carbGrams}g
                   </div>
-                  <div className="text-[9px] text-white/50 mt-1 uppercase">Oats, Roti, Rice, Fruits</div>
+                  <div className="text-[9px] text-zinc-500 mt-1 uppercase">Oats, Roti, Rice, Fruits</div>
                 </div>
 
                 {/* Fats */}
-                <div className="bg-white/5 border border-white/10 p-4 rounded-2xl">
-                  <div className="text-[10px] font-mono text-white/70 font-bold uppercase tracking-wider">Fats</div>
-                  <div className="text-2xl sm:text-3xl font-black text-white font-display mt-1">
+                <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl">
+                  <div className="text-[10px] font-mono text-zinc-700 font-bold uppercase tracking-wider">Fats</div>
+                  <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-display mt-1">
                     {fatGrams}g
                   </div>
-                  <div className="text-[9px] text-white/50 mt-1 uppercase">Almonds, Desi Ghee</div>
+                  <div className="text-[9px] text-zinc-500 mt-1 uppercase">Almonds, Desi Ghee</div>
                 </div>
 
               </div>
 
               {/* Recommended Old Skoool Split */}
-              <div className="bg-white/5 border border-white/10 p-5 rounded-2xl mb-6 text-left">
-                <div className="text-[10px] font-mono uppercase text-[#F27D26] font-bold mb-1.5 flex items-center gap-1.5">
+              <div className="bg-zinc-50 border border-zinc-200 p-5 rounded-2xl mb-6 text-left">
+                <div className="text-[10px] font-mono uppercase text-red-600 font-bold mb-1.5 flex items-center gap-1.5">
                   <Dumbbell className="w-3.5 h-3.5" />
                   <span>Recommended Workout Architecture</span>
                 </div>
-                <div className="text-xs sm:text-sm font-semibold text-white leading-relaxed">
+                <div className="text-xs sm:text-sm font-semibold text-zinc-800 leading-relaxed">
                   {getRecommendedSplit()}
                 </div>
               </div>
             </div>
 
             {/* Direct Connect to Diet Consultant */}
-            <div className="pt-5 border-t border-white/10 space-y-3">
-              <div className="text-[10px] uppercase font-bold tracking-widest text-white/50 text-left">
+            <div className="pt-5 border-t border-zinc-200 space-y-3">
+              <div className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 text-left">
                 Send to Certified Nutritionist (Owners):
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -330,9 +330,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                   href={`https://wa.me/917087285367?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-[#F27D26] text-white py-3 px-4 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-white/10"
+                  className="bg-zinc-100 hover:bg-red-600 hover:text-white text-zinc-800 py-3 px-4 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-zinc-200"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Anjali (70872-85367)</span>
                 </a>
 
@@ -341,9 +341,9 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onOpenPass
                   href={`https://wa.me/918544834372?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-[#F27D26] text-white py-3 px-4 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-white/10"
+                  className="bg-zinc-100 hover:bg-red-600 hover:text-white text-zinc-800 py-3 px-4 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-zinc-200"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Satnam Singh (8544834372)</span>
                 </a>
               </div>

@@ -10,7 +10,6 @@ import { HeroSection } from './components/HeroSection';
 import { OwnersTrainersSection } from './components/OwnersTrainersSection';
 import { PopularTimesVisualizer } from './components/PopularTimesVisualizer';
 import { ServicesShowcase } from './components/ServicesShowcase';
-import { PhotoGallerySection } from './components/PhotoGallerySection';
 import { FitnessCalculator } from './components/FitnessCalculator';
 import { MembershipPlans } from './components/MembershipPlans';
 import { ReviewsSection } from './components/ReviewsSection';
@@ -30,7 +29,6 @@ export default function App() {
   const [isDirectionsModalOpen, setIsDirectionsModalOpen] = useState(false);
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
-  const [galleryFilter, setGalleryFilter] = useState<'all' | 'outside'>('all');
   const [customReviews, setCustomReviews] = useState<GymReview[]>([]);
 
   const handleOpenPassModal = (serviceName?: string) => {
@@ -38,23 +36,15 @@ export default function App() {
     setIsPassModalOpen(true);
   };
 
-  const handleOpenPhotos = (category: 'all' | 'outside' = 'all') => {
-    setGalleryFilter(category);
-    const el = document.getElementById('gallery');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const handleAddReview = (newRev: GymReview) => {
     setCustomReviews((prev) => [newRev, ...prev]);
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F5F5F5] relative overflow-x-hidden selection:bg-[#F27D26] selection:text-white font-sans">
+    <div className="min-h-screen bg-white text-zinc-900 relative overflow-x-hidden selection:bg-red-600 selection:text-white font-sans">
       
-      {/* Background Spatial Grid and Glow Lines */}
-      <div className="fixed inset-0 pointer-events-none opacity-10 bg-[radial-gradient(#F27D26_1px,transparent_1px)] [background-size:32px_32px]" />
+      {/* Background Spatial Grid with Red Tint Accent */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#DC2626_1px,transparent_1px)] [background-size:32px_32px]" />
       
       {/* Dynamic Island Live Status Pill */}
       <DynamicIslandStatus
@@ -67,7 +57,7 @@ export default function App() {
         onOpenPassModal={() => handleOpenPassModal('General Full Access')}
         onOpenDirections={() => setIsDirectionsModalOpen(true)}
         onOpenReviewModal={() => setIsReviewModalOpen(true)}
-        onOpenPhotos={() => handleOpenPhotos('all')}
+        onOpenPhotos={() => setIsDirectionsModalOpen(true)}
         onOpenShare={() => setIsShareModalOpen(true)}
       />
 
@@ -80,7 +70,7 @@ export default function App() {
           onOpenDirections={() => setIsDirectionsModalOpen(true)}
           onOpenReviewModal={() => setIsReviewModalOpen(true)}
           onOpenShareModal={() => setIsShareModalOpen(true)}
-          onOpenPhotosModal={handleOpenPhotos}
+          onOpenPhotosModal={() => setIsDirectionsModalOpen(true)}
         />
 
         {/* 2. Founders & Certified Head Coaches */}
@@ -89,11 +79,8 @@ export default function App() {
         {/* 3. Popular Times Visualizer (Google Maps replica with 3 PM highlight) */}
         <PopularTimesVisualizer />
 
-        {/* 3. 6 Core Pillars Showcase */}
+        {/* 4. 6 Core Pillars Showcase */}
         <ServicesShowcase onOpenPassModal={handleOpenPassModal} />
-
-        {/* 4. Photo Gallery & Studio Visual Tour (See photos & See outside) */}
-        <PhotoGallerySection initialFilter={galleryFilter} />
 
         {/* 5. iOS Macro & Diet Calculator */}
         <FitnessCalculator onOpenPassModal={handleOpenPassModal} />
